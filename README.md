@@ -14,11 +14,12 @@ Medical Quest est un jeu sérieux à visée éducative qui place le joueur dans 
 ## 👥 L'équipe
 
 ### Game Developers (2)
-- **MEHOBA Christopher** - *Lead Developer* - Programmation du système d'interaction,Conception 3D
-- **Jean-baptiste VIOSSI** - *Technical Artist*
+- **MEHOBA Christopher** - *Developer 1* - Programmation du système d'interaction,Conception 3D
+- **Jean-baptiste VIOSSI** - *Developer 2* Conception Quizz 
 
 ### Game Design
 - **Elias Hounnou** - *Game Designer* - Conception de la progression pédagogique
+
 
 
 ## 🎮 Gameplay
