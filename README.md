@@ -9,7 +9,7 @@ Medical Quest est un jeu sérieux à visée éducative qui place le joueur dans 
 - Comprendre les causes, la transmission et les symptômes d'une maladie
 - Apprendre les protocoles de traitement médical
 - Développer des compétences en matière de prise de décision médicale
-- Sensibiliser aux mesures préventives contre le paludisme
+- Sensibiliser aux mesures préventives contre cette maladie
 
 ## 👥 L'équipe
 
