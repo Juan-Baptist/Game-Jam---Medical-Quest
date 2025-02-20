@@ -42,6 +42,9 @@ Le jeu se déroule en plusieurs phases interactives:
    - Observation de l'évolution du patient
 
 4. **Quiz final**
+
+   À la fin de chaque mission, le docteur propose au joueur un quiz pour vérifier s'il a bien assimilé les connaissances sur la maladie. Le quiz complet est disponible sur https://medquest.tech/
+
    - Questions de synthèse sur les connaissances acquises
    - Feedback éducatif
 
