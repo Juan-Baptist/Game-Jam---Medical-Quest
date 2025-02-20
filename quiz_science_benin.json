@@ -1,0 +1,212 @@
+[
+    {
+        "question": "Qu’est-ce que le paludisme ?",
+        "options": [
+            "Une maladie causée par un parasite",
+            "Une infection virale",
+            "Une maladie due à une carence nutritionnelle",
+            "Une maladie auto-immune"
+        ],
+        "answer": "Une maladie causée par un parasite"
+    },
+    {
+        "question": "Quel est l'agent responsable du paludisme ?",
+        "options": [
+            "Une bactérie",
+            "Un virus",
+            "Un parasite",
+            "Un champignon"
+        ],
+        "answer": "Un parasite"
+    },
+    {
+        "question": "Comment se transmet le paludisme ?",
+        "options": [
+            "Par l’eau contaminée",
+            "Par une piqûre de moustique",
+            "Par contact avec une personne infectée",
+            "Par ingestion d’aliments crus"
+        ],
+        "answer": "Par une piqûre de moustique"
+    },
+    {
+        "question": "Quel type de moustique est responsable de la transmission du paludisme ?",
+        "options": [
+            "Culex",
+            "Aedes",
+            "Anopheles",
+            "Mansonia"
+        ],
+        "answer": "Anopheles"
+    },
+    {
+        "question": "Quel est le parasite responsable du paludisme le plus dangereux ?",
+        "options": [
+            "Plasmodium malariae",
+            "Plasmodium ovale",
+            "Plasmodium vivax",
+            "Plasmodium falciparum"
+        ],
+        "answer": "Plasmodium falciparum"
+    },
+    {
+        "question": "Quelle est la période de l’année où le paludisme est le plus fréquent au Bénin ?",
+        "options": [
+            "Saison sèche",
+            "Plasmodium ovale",
+            "Saison froide",
+            "Toute l’année"
+        ],
+        "answer": "Saison des pluies"
+    },
+    {
+        "question": "Quelle tranche d’âge est la plus vulnérable au paludisme au Bénin ?",
+        "options": [
+            "Les adolescents",
+            "Les adultes de 30 à 50 ans",
+            "Les nourrissons et les enfants de moins de 5 ans",
+            "Les personnes âgées de plus de 60 ans"
+        ],
+        "answer": "Les nourrissons et les enfants de moins de 5 ans"
+    },
+    {
+        "question": "Quel est le rôle du Programme National de Lutte contre le Paludisme (PNLP) au Bénin ?",
+        "options": [
+            "Fournir des vaccins contre le paludisme",
+            "Créer un traitement miracle contre le paludisme",
+            "Sensibiliser et distribuer des moustiquaires imprégnées",
+            "Détruire tous les moustiques"
+        ],
+        "answer": "Sensibiliser et distribuer des moustiquaires imprégnées"
+    },
+    {
+        "question": "Quelle est la proportion de consultations médicales attribuées au paludisme au Bénin ?",
+        "options": [
+            "10%",
+            "30%",
+            "50%",
+            "60%"
+        ],
+        "answer": "50%"
+    },
+    {
+        "question": "Quels sont les groupes les plus exposés au paludisme au Bénin ?",
+        "options": [
+            "Les hommes adultes",
+            "Les femmes enceintes et les jeunes enfants",
+            "Les sportifs de haut niveau",
+            "Les touristes"
+        ],
+        "answer": "Les femmes enceintes et les jeunes enfants"
+    },
+    {
+        "question": "Quels sont les symptômes courants du paludisme ?",
+        "options": [
+            "Éruption cutanée et maux de gorge",
+            "Fièvre, frissons, sueurs et maux de tête",
+            "Douleurs articulaires et toux sèche",
+            "Gonflement des ganglions"
+        ],
+        "answer": "Fièvre, frissons, sueurs et maux de tête"
+    },
+    {
+        "question": "Quel organe est principalement responsable de la digestion chimique des aliments ?",
+        "options": [
+            "L’estomac",
+            "Le foie",
+            "Le pancréas",
+            "Le gros intestin"
+        ],
+        "answer": "L’estomac"
+    },
+    {
+        "question": "Quel est le principal traitement recommandé contre le paludisme grave ?",
+        "options": [
+            "Paracétamol",
+            "Antiviraux",
+            "Artemisinine et ses dérivés",
+            "Aspirine"
+        ],
+        "answer": "Artemisinine et ses dérivés"
+    },
+    {
+        "question": "Pourquoi ne doit-on pas utiliser uniquement la chloroquine pour traiter le paludisme au Bénin ?",
+        "options": [
+            "Parce qu’elle est trop chère",
+            "Parce que le parasite est devenu résistant",
+            "Parce qu’elle provoque immédiatement des allergies",
+            "Parce qu’elle est interdite par l’OMS"
+        ],
+        "answer": "Parce que le parasite est devenu résistant"
+    },
+    {
+        "question": "Quel est le principal moyen de diagnostic du paludisme dans les centres de santé ?",
+        "options": [
+            "Test sanguin rapide",
+            "Analyse d’urine",
+            "Scanner cérébral",
+            "Radiographie des poumons"
+        ],
+        "answer": "Test sanguin rapide"
+    },
+    {
+        "question": "Quel est le principal danger du paludisme non traité ?",
+        "options": [
+            "Une prise de poids soudaine",
+            "Une toux persistante",
+            "Une évolution vers des complications graves, voire la mort",
+            "Une perte temporaire de mémoire"
+        ],
+        "answer": "Une évolution vers des complications graves, voire la mort"
+    },
+    {
+        "question": "Quel est le moyen de prévention le plus efficace contre le paludisme ?",
+        "options": [
+            "Porter des vêtements longs",
+            "Dormir sous une moustiquaire imprégnée",
+            "Manger des aliments riches en fer",
+            "Boire beaucoup d’eau"
+        ],
+        "answer": "Dormir sous une moustiquaire imprégnée"
+    },
+    {
+        "question": "Quelle est l’importance des moustiquaires imprégnées d’insecticide au Bénin ?",
+        "options": [
+            "Elles empêchent l'air de passer",
+            "Elles protègent contre les piqûres de moustiques infectés",
+            "Elles réduisent la fatigue due à la chaleur",
+            "Elles remplacent les médicaments antipaludiques"
+        ],
+        "answer": "Elles protègent contre les piqûres de moustiques infectés"
+    },
+    {
+        "question": "Quel est le rôle de la pulvérisation intradomiciliaire dans la lutte contre le paludisme ?",
+        "options": [
+            "Embellir les maisons",
+            "Réduire la population de moustiques à l’intérieur des habitations",
+            "Purifier l’air intérieur",
+            "Attirer les moustiques loin des maisons"
+        ],
+        "answer": "Réduire la population de moustiques à l’intérieur des habitations"
+    },
+    {
+        "question": "Quel vaccin contre le paludisme a été introduit dans certains pays africains, y compris le Bénin ?",
+        "options": [
+            "RTS,S (Mosquirix)",
+            "MMR",
+            "RotaTeq",
+            "BCG"
+        ],
+        "answer": "RTS,S (Mosquirix)"
+    },
+    {
+        "question": "Pourquoi est-il important d’éliminer les eaux stagnantes dans la lutte contre le paludisme ?",
+        "options": [
+            "Parce qu’elles attirent les oiseaux",
+            "Parce qu’elles servent de lieu de ponte aux moustiques Anopheles",
+            "Parce qu’elles polluent l’environnement",
+            "Parce qu’elles provoquent des odeurs désagréables"
+        ],
+        "answer": "Parce qu’elles servent de lieu de ponte aux moustiques Anopheles"
+    }
+]

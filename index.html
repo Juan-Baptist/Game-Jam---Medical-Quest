@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Medical Quest</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .game-container {
+      background: #ffffffdd;
+      width: 400px;
+      max-width: 90%;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      text-align: center;
+      position: relative;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .game-header {
+      margin-bottom: 20px;
+    }
+
+    .game-header h1 {
+      font-size: 1.5rem;
+      color: #333;
+    }
+
+    .timer-container {
+      margin: 10px auto;
+      position: relative;
+      width: 120px;
+      height: 120px;
+    }
+
+    .progress-ring {
+      transform: rotate(-90deg);
+    }
+
+    .progress-ring__circle {
+      stroke-dasharray: 251.2;
+      stroke-dashoffset: 0;
+      transition: stroke-dashoffset 1s linear;
+    }
+
+    .timer-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .score {
+      font-size: 1rem;
+      font-weight: bold;
+      color: #333;
+      margin: 10px 0;
+    }
+
+    .question {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin: 20px 0;
+      color: #444;
+    }
+
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .options button {
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      background: #0099ff;
+      color: #fff;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .options button:hover {
+      background: #0077cc;
+      transform: translateY(-2px);
+    }
+
+    .correct {
+      background: #2ecc71 !important;
+      animation: correctAnim 0.5s ease-in-out;
+    }
+
+    @keyframes correctAnim {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
+    .wrong {
+      background: #e74c3c !important;
+      animation: shake 0.5s ease-in-out;
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-4px); }
+      50% { transform: translateX(4px); }
+      75% { transform: translateX(-4px); }
+    }
+
+    .progress-bar {
+      background: #ddd;
+      height: 10px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      overflow: hidden;
+    }
+
+    .progress {
+      height: 10px;
+      width: 0%;
+      background: #3498db;
+      transition: width 0.5s ease-in-out;
+    }
+
+    .audio-controls {
+      display: flex;
+      justify-content: center;
+      gap: 5px;
+      margin: 10px 0;
+    }
+
+    .audio-controls button {
+      background: #333;
+      color: #fff;
+      border: none;
+      padding: 8px 12px;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: background 0.2s;
+    }
+
+    .audio-controls button:hover {
+      background: #555;
+    }
+
+    /* Écran de fin */
+    .end-screen {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .end-screen h1 {
+      font-size: 1.8rem;
+      color: #333;
+    }
+
+    .end-screen p {
+      font-size: 1.1rem;
+      color: #444;
+    }
+
+    .end-screen button {
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      background: #f39c12;
+      color: #fff;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .end-screen button:hover {
+      background: #d27900;
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+
+<div class="game-container">
+  <div class="game-header">
+    <h1>Scientifica Quest - Bénin</h1>
+  </div>
+
+  <!-- Timer -->
+  <div class="timer-container">
+    <svg class="progress-ring" width="120" height="120">
+      <circle
+        class="progress-ring__circle"
+        stroke="green"
+        stroke-width="10"
+        fill="transparent"
+        r="50"
+        cx="60"
+        cy="60"
+      ></circle>
+    </svg>
+    <div class="timer-text">
+      <span id="time">60</span> sec
+    </div>
+  </div>
+
+  <!-- Score -->
+  <div class="score">
+    Score : <span id="score">0</span>
+  </div>
+
+  <!-- Question -->
+  <div class="question"></div>
+
+  <!-- Options -->
+  <div class="options"></div>
+
+  <!-- Progress bar -->
+  <div class="progress-bar">
+    <div class="progress"></div>
+  </div>
+
+  <!-- Audio Controls -->
+  <div class="audio-controls">
+    <button onclick="toggleMusic()">🎵 Play/Pause</button>
+    <button onclick="changeVolume(-0.1)">🔉 -</button>
+    <button onclick="changeVolume(0.1)">🔊 +</button>
+  </div>
+
+  <audio id="bg-music" loop>
+    <source src="A nous deux.mp3" type="audio/mp3" />
+  </audio>
+</div>
+
+<script>
+  let questions = [];
+  let currentQuestionIndex = 0;
+  let score = 0;
+  let timeLeft = 60;
+  let timer;
+
+  fetch("quiz_science_benin.json")
+    .then((response) => response.json())
+    .then((data) => {
+
+      questions = data.sort(() => 0.5 - Math.random()).slice(0, 20);
+      loadQuestion();
+      startTimer();
+    });
+
+  function loadQuestion() {
+    if (currentQuestionIndex >= questions.length) return endGame();
+
+    let questionObj = questions[currentQuestionIndex];
+    document.querySelector(".question").textContent = questionObj.question;
+
+    let optionsDiv = document.querySelector(".options");
+    optionsDiv.innerHTML = "";
+
+    questionObj.options.forEach((option, index) => {
+      let btn = document.createElement("button");
+      btn.textContent = `${String.fromCharCode(65 + index)}. ${option}`;
+      btn.onclick = () => checkAnswer(btn, option, questionObj.answer);
+      optionsDiv.appendChild(btn);
+    });
+
+    document.querySelector(".progress").style.width = `${
+      (currentQuestionIndex + 1) * (100 / questions.length)
+    }%`;
+  }
+
+  function checkAnswer(btn, selectedOption, correctAnswer) {
+    let buttons = document.querySelectorAll(".options button");
+
+    if (selectedOption === correctAnswer) {
+      btn.classList.add("correct");
+      score + 5;
+    } else {
+      btn.classList.add("wrong");
+      buttons.forEach((button) => {
+        if (button.textContent.includes(correctAnswer)) {
+          button.classList.add("correct");
+        }
+      });
+    }
+
+    document.getElementById("score").textContent = score;
+
+    // Passer à la question suivante
+    setTimeout(() => {
+      currentQuestionIndex++;
+      loadQuestion();
+    }, 1000);
+  }
+
+  function endGame() {
+    clearInterval(timer);
+    document.querySelector(".game-container").innerHTML = `
+      <div class="end-screen">
+        <h1>Quiz Terminé 🎉</h1>
+        <p>Votre score : <strong>${score}/20</strong></p>
+        <button onclick="restartGame()">Rejouer</button>
+      </div>
+    `;
+  }
+
+  function startTimer() {
+    timeLeft = 60;
+    updateTimerDisplay();
+
+    timer = setInterval(() => {
+      timeLeft--;
+      updateTimerDisplay();
+
+      if (timeLeft <= 0) {
+        clearInterval(timer);
+        endGame();
+      }
+    }, 1000);
+  }
+
+  function updateTimerDisplay() {
+    document.getElementById("time").textContent = timeLeft;
+
+    let circle = document.querySelector(".progress-ring__circle");
+    let circumference = 2 * Math.PI * 50; // r=50
+    let offset = circumference - (timeLeft / 60) * circumference;
+    circle.style.strokeDasharray = circumference;
+    circle.style.strokeDashoffset = offset;
+  }
+
+  function toggleMusic() {
+    let music = document.getElementById("bg-music");
+    music.paused ? music.play() : music.pause();
+  }
+
+  function changeVolume(change) {
+    let music = document.getElementById("bg-music");
+    music.volume = Math.min(1, Math.max(0, music.volume + change));
+  }
+
+  function restartGame() {
+    currentQuestionIndex = 0;
+    score = 0;
+    timeLeft = 60;
+
+    document.querySelector("body").innerHTML = `
+      <div class="game-container">
+        <div class="game-header">
+          <h1>Medical Quest</h1>
+        </div>
+        <div class="timer-container">
+          <svg class="progress-ring" width="120" height="120">
+            <circle
+              class="progress-ring__circle"
+              stroke="green"
+              stroke-width="10"
+              fill="transparent"
+              r="50"
+              cx="60"
+              cy="60"
+            ></circle>
+          </svg>
+          <div class="timer-text">
+            <span id="time">60</span> sec
+          </div>
+        </div>
+        <div class="score">
+          Score : <span id="score">0</span>
+        </div>
+        <div class="question"></div>
+        <div class="options"></div>
+        <div class="progress-bar">
+          <div class="progress"></div>
+        </div>
+        <div class="audio-controls">
+          <button onclick="toggleMusic()">🎵 Play/Pause</button>
+          <button onclick="changeVolume(-0.1)">🔉 -</button>
+          <button onclick="changeVolume(0.1)">🔊 +</button>
+        </div>
+        <audio id="bg-music" loop>
+          <source src="A nous deux.mp3" type="audio/mp3" />
+        </audio>
+      </div>
+    `;
+
+    fetch("quiz_science_benin.json")
+      .then((response) => response.json())
+      .then((data) => {
+        questions = data.sort(() => 0.5 - Math.random()).slice(0, 20);
+        loadQuestion();
+        startTimer();
+      });
+  }
+</script>
+</body>
+</html>
