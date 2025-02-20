@@ -6,7 +6,7 @@
 Medical Quest est un jeu sérieux à visée éducative qui place le joueur dans le rôle d'un jeune médecin ou chercheur en santé publique. À travers une expérience immersive, les joueurs apprennent les bases d'une maladie donnée, son diagnostic et son traitement, tout en développant des compétences pratiques dans un environnement médical simulé.
 
 ### Objectifs pédagogiques
-- Comprendre les causes, la transmission et les symptômes de cette maladie
+- Comprendre les causes, la transmission et les symptômes d'une maladie
 - Apprendre les protocoles de traitement médical
 - Développer des compétences en matière de prise de décision médicale
 - Sensibiliser aux mesures préventives contre le paludisme
@@ -96,7 +96,7 @@ Le jeu intègre de nombreux éléments éducatifs:
 ```
 ## 👨‍🏫 Usage pédagogique
 
-Malaria Quest est conçu pour être utilisé dans:
+Medical Quest est conçu pour être utilisé dans:
 - Les écoles de médecine et d'infirmières
 - Les formations en santé publique
 - Les programmes de sensibilisation dans les zones endémiques
